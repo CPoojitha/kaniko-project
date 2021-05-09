@@ -16,13 +16,18 @@ pipeline {
           bat 'mvnw clean package -Dquarkus.container-image.build=true'
             }
             }
-            stage('Deploying into k8s'){
+            /*stage('Deploying into k8s'){
             steps{
                    
                   bat 'kubectl apply -f deployment.yaml'
                         }
             }
-            
+             stage('push image') {
+            steps{
+                
+          bat '>mvnw clean package -Dquarkus.container-image.push=true'
+            }
+            }*/
             
         }
         }
